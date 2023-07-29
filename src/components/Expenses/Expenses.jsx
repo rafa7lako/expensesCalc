@@ -1,9 +1,17 @@
 import "./Expenses.css";
 import Card from "../UI/Card";
 import ExpenseItem from "./ExpenseItem";
+import ExpensesFilter from "./ExpensesFilter";
 
 const Expenses = (props) => {
+
+	const saveExpenseFilterYearHandler = (enteredExpenseFilterYear) =>{
+		const dropdownValue = enteredExpenseFilterYear
+	};
+
 	return (
+		<div>
+		<ExpensesFilter onSaveExpenseFilterYear={saveExpenseFilterYearHandler}/>
 		<Card className="expenses">
 			<ExpenseItem
 				title={props.expenses[0].title}
@@ -26,6 +34,7 @@ const Expenses = (props) => {
 				date={props.expenses[3].date}
 			></ExpenseItem>
 		</Card>
+		</div>
 	);
 }
 
